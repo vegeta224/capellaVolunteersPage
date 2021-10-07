@@ -26,7 +26,8 @@
         </nav>
     </header>
     <section id="pageForm">
-        <!--Line 30's onSubmit prevents the page from refreshing automatically after form submission-->
+        <h2>Invitation Builder</h2>
+        <!--Line 31's onSubmit prevents the page from refreshing automatically after form submission-->
         <form onSubmit='return false'>
             <label for="recipientName">Recipient name:</label>
             <input type="text" name="recipientName" id='recipientNameInput' placeholder="Enter your Recipient Name" />
@@ -53,6 +54,7 @@
 
 
     <article id="placeholderContent">
+        <h3>Your Customized Invitation</h3>
         Hello <span id="recipientName">recipientName</span>!
         <br/>
         <br/> You have been invited to volunteer for an event held by <span id="organizationName">organizationName</span> on <span id="eventDate">eventDate</span>. Please come to the following website: <span id="websiteURL">websiteURL</span> to sign up as a volunteer.
