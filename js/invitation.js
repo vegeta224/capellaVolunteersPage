@@ -7,11 +7,15 @@ let recipientNumber = document.getElementById('volunteersInput')
 let volunteersNames = [];
 
 const generateInvitation = function() {
-    let receiverName1 = document.getElementById('recipientNameInput1').value;
+    let receiverName1 = document.getElementById('recipientNameInput').value;
     let volunteersNames = [];
     // for loop adds names to the volunteersNames array
     for (let i = 1; i <= recipientNumber.value; i++) {
-      volunteersNames.push(document.getElementById(`recipientNameInput${i}`).value)
+      if (i === 1) {
+        volunteersNames.push(document.getElementById('recipientNameInput').value)
+      } else {
+        volunteersNames.push(document.getElementById(`recipientNameInput${i}`).value)
+      }
     }
     // lines 17-20 create variables for the non-recipient data
     let organization = document.getElementById('organizationNameInput').value;
@@ -32,7 +36,7 @@ const generateInvitation = function() {
     // loops through the recipient number submitted creating a new input field for each individual recipient
     for (let i = 1; i < recipientNumber.value; i++) {
       const recipientsDiv = document.getElementById('recipients')
-      const inputNeeded = document.getElementById('recipientNameInput1')
+      const inputNeeded = document.getElementById('recipientNameInput')
       const clone = inputNeeded.cloneNode(true)
       clone.id = `recipientNameInput${i + 1}`
       recipientsDiv.appendChild(clone)
@@ -47,7 +51,11 @@ const generateInvitation = function() {
       const clone = inviteHolder.cloneNode(true)
       const changeSpan = clone.firstChild.nextSibling.nextSibling.nextSibling;
       // conditional statement ensures the exact number of invites matches the recipientNumber
-      if (i < recipientNumber.value) {
+      if (i === 1) {
+        invite.appendChild(clone)
+        changeSpan.id = `recipientName${i + 1}`
+        document.getElementById(`recipientName${i}`).innerHTML = document.getElementById('recipientNameInput').value
+      } else if (i < recipientNumber.value && i !== 1) {
         invite.appendChild(clone)
         changeSpan.id = `recipientName${i + 1}`
         document.getElementById(`recipientName${i}`).innerHTML = document.getElementById(`recipientNameInput${i}`).value
@@ -55,5 +63,16 @@ const generateInvitation = function() {
         changeSpan.id = `recipientName${i + 1}`
         document.getElementById(`recipientName${i}`).innerHTML = document.getElementById(`recipientNameInput${i}`).value
       }
+
+
+
+      // if (i < recipientNumber.value) {
+      //   invite.appendChild(clone)
+      //   changeSpan.id = `recipientName${i + 1}`
+      //   document.getElementById(`recipientName${i}`).innerHTML = document.getElementById(`recipientNameInput${i}`).value
+      // } else {
+      //   changeSpan.id = `recipientName${i + 1}`
+      //   document.getElementById(`recipientName${i}`).innerHTML = document.getElementById(`recipientNameInput${i}`).value
+      // }
     }
   }
