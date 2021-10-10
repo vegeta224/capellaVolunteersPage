@@ -27,10 +27,17 @@
     </header>
     <section id="pageForm">
         <h2>Invitation Builder</h2>
-        <!--Line 31's onSubmit prevents the page from refreshing automatically after form submission-->
-        <form onSubmit='return false'>
-            <label for='recipientNameInput'>Recipient name:</label>
-            <input type="text" name="recipientName" id='recipientNameInput' placeholder="Enter your Recipient Name" />
+        <!--Line 31's onSubmit prevents the page from refreshing automatically after form submission and prevents form from submitting before the rest of the details are entered when number of recipients is entered-->
+        <form onSubmit='return false' onkeydown="return event.key != 'Enter';">
+            <label for='volunteersInput'>Number of recipients (5-10):</label>
+            <!--input type is number so no letters can be entered here, and min max controls ensure that no number outside of 5-10 are entered-->
+            <input type="number" min="5" max="10" name="volunteers" id='volunteersInput' onkeyup='countVolunteers()' /><br />
+
+            <label for='recipientNameInput'>Recipient names:</label>
+            <!--div was created so that multiple recipient input fields can be copied per number of recipients-->
+            <div id='recipients'>
+                <input type="text" name="recipientName" id='recipientNameInput1' placeholder="Enter your Recipient Name" />
+            </div>
 
             <label for='organizationNameInput'>Organization name:
             </label>
@@ -52,20 +59,22 @@
         </form>
     </section>
 
-
-    <article id="placeholderContent">
-        <h3>Your Customized Invitation</h3>
-        Hello <span id="recipientName">recipientName</span>!
-        <br/>
-        <br/> You have been invited to volunteer for an event held by <span id="organizationName">organizationName</span> on <span id="eventDate">eventDate</span>. Please come to the following website: <span id="websiteURL">websiteURL</span> to sign up as a volunteer.
-        <br/>
-        <br/> Thanks!
-        <br />
-        <span id="hostName">hostName</span>
-    </article>
+    <!--div was created so one invite can be displayed per each recipient-->
+    <div id='invitePlaceholder'>
+        <article id="placeholderContent">
+            <h3>Your Customized Invitation</h3>
+            Hello <span id="recipientName1">recipientName</span>!
+            <br/>
+            <br/> You have been invited to volunteer for an event held by <span id="organizationName">organizationName</span> on <span id="eventDate">eventDate</span>. Please come to the following website: <span id="websiteURL">websiteURL</span> to sign up as a volunteer.
+            <br/>
+            <br/> Thanks!
+            <br />
+            <span id="hostName">hostName</span>
+        </article>
+    </div>
     <footer>This events site is for IT-FP3215 tasks.
     </footer>
     <script src='./js/invitation.js'></script>
+   
 </body>
-
 </html>
