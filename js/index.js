@@ -22,7 +22,7 @@ function running() {
 
 function cycle() {
     const imgElement = document.getElementById('banners')
-    setInterval(function cycleImages() {
+    setInterval(function() {
         nextImage = imgList[index];
         const ourSrc = preloadImage(nextImage.src);
         imgElement.src = ourSrc;
