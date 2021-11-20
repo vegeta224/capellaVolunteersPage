@@ -16,8 +16,18 @@ function onpageload(images) {
 };
 
 function running() {
-    onpageload(imgList);
+    //onpageload(imgList);
+    preloadImages(imgList)
     cycle();
+}
+
+function preloadImages(sources) {
+    window.preloadedImages = new Array();
+    console.log('preload')
+    for (var i = 0; i < sources.length; i++) {
+        window.preloadedImages[i] = new Image();
+        window.preloadedImages[i].src = sources[i];
+    }
 }
 
 function cycle() {
