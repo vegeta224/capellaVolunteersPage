@@ -18,14 +18,14 @@ function onpageload(images) {
     for (var i = 0; i < images.length; i++) {
       images[i] = preloadImage(images[i])
     }
-    cycle(images)
+  
     return images
 };
 
 function running() {
     onpageload(imgList);
     //preloadImages(imgList)
-   // cycle();
+   cycle();
 }
 
 function preloadImages(sources) {
@@ -41,7 +41,7 @@ function cycle(images) {
     const imgElement = document.getElementById('banners')
     setInterval(function() {
         nextImage = images[index];
-        imgElement.src = nextImage
+        imgElement.src = nextImage;
         //const ourSrc = preloadImage(nextImage.src);
         //document.getElementById('bannerImages').replaceChild(ourSrc, imgElement)
 //        imgElement.src = ourSrc;
