@@ -43,9 +43,7 @@ function cycle(images) {
         nextImage = images[index];
         console.log(imgElement.src)
         imgElement.src = nextImage;
-        //const ourSrc = preloadImage(nextImage.src);
-        //document.getElementById('bannerImages').replaceChild(ourSrc, imgElement)
-//        imgElement.src = ourSrc;
+  
         (index > 1 ? index = 0 : index++)
     }, 3000)
 }
