@@ -29,7 +29,7 @@ function cycle() {
     setInterval(function() {
         nextImage = imgList[index];
         //console.log(imgElement.src, nextImage);        
-        imgElement = nextImage.src;
+        imgElement = nextImage.outerHTML.src;
         (index > 1 ? index = 0 : index++)
     }, 3000)
 }
