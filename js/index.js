@@ -38,7 +38,7 @@ function cycle() {
         var ourSrc = new Image();
         ourSrc.src = nextImage
       //imgElement.src = ourSrc;
-        imgElement.innerHTML = ourSrc
+        imgElement.innerHTML = 'hello'
         (index > 1 ? index = 0 : index++)
     }, 3000)
 }
