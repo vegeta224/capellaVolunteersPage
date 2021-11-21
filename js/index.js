@@ -35,7 +35,8 @@ function cycle() {
     setInterval(function() {
         nextImage = imgList[index];
         const ourSrc = preloadImage(nextImage.src);
-        imgElement.src = ourSrc;
+        //imgElement.src = ourSrc;
+        imgElement.appendChild(ourSrc)
         (index > 1 ? index = 0 : index++)
     }, 3000)
 }
