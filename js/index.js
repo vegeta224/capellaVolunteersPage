@@ -18,11 +18,13 @@ function onpageload(images) {
 };
 
 function running() {
+    console.log('running')
     onpageload(imgList);
    cycle();
 }
 
 function cycle() {
+    console.log('cycle')
     const imgElement = document.getElementById('banners')
     setInterval(function() {
         nextImage = imgList[index];
