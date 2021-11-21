@@ -8,6 +8,11 @@ function preloadImage(url){
     return img
 }
 
+// function preloadImage() {
+//     const img = new Image();
+//     img.src = 
+// }
+
 function onpageload(images) {
     for (var i = 0; i < images.length; i++) {
       images[i] = preloadImage(images[i])
@@ -34,8 +39,9 @@ function cycle() {
     const imgElement = document.getElementById('banners')
     setInterval(function() {
         nextImage = imgList[index];
-        const ourSrc = preloadImage(nextImage.src);
-        document.getElementById('bannerImages').replaceChild(ourSrc, imgElement)
+        imgElement.nextImage
+        //const ourSrc = preloadImage(nextImage.src);
+        //document.getElementById('bannerImages').replaceChild(ourSrc, imgElement)
 //        imgElement.src = ourSrc;
         (index > 1 ? index = 0 : index++)
     }, 3000)
