@@ -27,9 +27,9 @@ function cycle() {
  //   console.log('cycle')
     const imgElement = document.getElementById('banners')
     setInterval(function() {
-        var nextImage = imgList[index];
+        nextImage = imgList[index];
         //console.log(imgElement.src, nextImage);        
-        imgElement = nextImage.src;
+        imgElement.src = nextImage.src;
         (index > 1 ? index = 0 : index++)
     }, 3000)
 }
