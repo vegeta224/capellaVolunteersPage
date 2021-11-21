@@ -24,7 +24,7 @@ function running() {
 }
 
 function cycle() {
-    console.log('cycle')
+ //   console.log('cycle')
     const imgElement = document.getElementById('banners')
     setInterval(function() {
         nextImage = imgList[index];
