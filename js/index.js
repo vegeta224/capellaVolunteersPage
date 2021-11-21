@@ -1,5 +1,5 @@
 let index = 0;
-imgList = ['../images/banner1.jpg', '../images/banner2.jpg', '../images/banner3.jpg'];
+imgList = ['./../images/banner1.jpg', './../images/banner2.jpg', './../images/banner3.jpg'];
 
 function preloadImage(url){
     console.log('running preload')
