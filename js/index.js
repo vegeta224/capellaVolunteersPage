@@ -13,7 +13,7 @@ function onpageload(images) {
     for (var i = 0; i < images.length; i++) {
       images[i] = preloadImage(images[i])
     }
-  
+    console.log('onpageload')
     return images
 };
 
