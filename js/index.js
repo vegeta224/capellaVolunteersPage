@@ -16,8 +16,8 @@ function onpageload(images) {
 };
 
 function running() {
-    //onpageload(imgList);
-    preloadImages(imgList)
+    onpageload(imgList);
+    //preloadImages(imgList)
     cycle();
 }
 
