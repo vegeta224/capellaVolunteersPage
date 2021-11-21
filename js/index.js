@@ -36,7 +36,7 @@ function cycle() {
         nextImage = imgList[index];
         const ourSrc = preloadImage(nextImage.src);
         //imgElement.src = ourSrc;
-        document.getElementById('bannerImages').appendChild(ourSrc.img)
+        document.getElementById('bannerImages').appendChild(ourSrc.innerHTML)
         (index > 1 ? index = 0 : index++)
     }, 3000)
 }
