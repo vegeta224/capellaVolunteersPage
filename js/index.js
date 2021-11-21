@@ -41,6 +41,7 @@ function cycle(images) {
     const imgElement = document.getElementById('banners')
     setInterval(function() {
         nextImage = images[index];
+        console.log(imgElement.src)
         imgElement.src = nextImage;
         //const ourSrc = preloadImage(nextImage.src);
         //document.getElementById('bannerImages').replaceChild(ourSrc, imgElement)
