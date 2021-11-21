@@ -2,6 +2,7 @@ let index = 0;
 imgList = ['../images/banner1.jpg', '../images/banner2.jpg', '../images/banner3.jpg'];
 
 function preloadImage(url){
+    console.log('running preload')
     const img = new Image();
     img.src = url;
     document.getElementById('banners').src = img.src
@@ -17,13 +18,14 @@ function onpageload(images) {
     for (var i = 0; i < images.length; i++) {
       images[i] = preloadImage(images[i])
     }
+    cycle(images)
     return images
 };
 
 function running() {
     onpageload(imgList);
     //preloadImages(imgList)
-    cycle();
+   // cycle();
 }
 
 function preloadImages(sources) {
@@ -35,10 +37,10 @@ function preloadImages(sources) {
     }
 }
 
-function cycle() {
+function cycle(images) {
     const imgElement = document.getElementById('banners')
     setInterval(function() {
-        nextImage = imgList[index];
+        nextImage = images[index];
         imgElement.src = nextImage
         //const ourSrc = preloadImage(nextImage.src);
         //document.getElementById('bannerImages').replaceChild(ourSrc, imgElement)
