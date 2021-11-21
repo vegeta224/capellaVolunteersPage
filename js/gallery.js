@@ -1,4 +1,4 @@
-imgList = ['../images/firefighter.jpg', '../images/work.jpg', '../images/silhouette.jpg', '../images/event.jpg'];
+imgList = ['./images/firefighter.jpg', './images/work.jpg', './images/silhouette.jpg', './images/event.jpg'];
 
 function preloadImage(url) {
     const img = new Image();
