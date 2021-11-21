@@ -35,10 +35,8 @@ function cycle() {
     setInterval(function() {
         nextImage = imgList[index];
         const ourSrc = preloadImage(nextImage.src);
-      ///  var ourSrc = new Image();
-       //ourSrc.src = nextImage
-        imgElement.src = ourSrc;
-       // imgElement.innerHTML = ourSrc
+        document.getElementById('bannerImages').replaceChild(ourSrc, imgElement)
+//        imgElement.src = ourSrc;
         (index > 1 ? index = 0 : index++)
     }, 3000)
 }
