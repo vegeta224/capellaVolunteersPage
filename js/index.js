@@ -39,7 +39,7 @@ function cycle() {
     const imgElement = document.getElementById('banners')
     setInterval(function() {
         nextImage = imgList[index];
-        imgElement.nextImage
+        imgElement.src = nextImage
         //const ourSrc = preloadImage(nextImage.src);
         //document.getElementById('bannerImages').replaceChild(ourSrc, imgElement)
 //        imgElement.src = ourSrc;
