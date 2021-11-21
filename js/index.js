@@ -5,7 +5,7 @@ function preloadImage(url){
     console.log('running preload')
     const img = new Image();
     img.src = url;
-    document.getElementById('banners').src = img.src
+  //  document.getElementById('banners').src = img.src
     return img
 }
 
