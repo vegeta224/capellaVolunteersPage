@@ -37,10 +37,10 @@ function preloadImages(sources) {
     }
 }
 
-function cycle(images) {
+function cycle() {
     const imgElement = document.getElementById('banners')
     setInterval(function() {
-        nextImage = images[index];
+        nextImage = imgList[index];
         console.log(imgElement.src)
         imgElement.src = nextImage;
   
