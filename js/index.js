@@ -34,9 +34,11 @@ function cycle() {
     const imgElement = document.getElementById('banners')
     setInterval(function() {
         nextImage = imgList[index];
-        const ourSrc = preloadImage(nextImage.src);
-        //imgElement.src = ourSrc;
-        document.getElementById('bannerImages').appendChild(ourSrc.outerHTML)
+      //  const ourSrc = preloadImage(nextImage.src);
+        var ourSrc = new Image();
+        ourSrc.src = nextImage
+      //imgElement.src = ourSrc;
+        imgElement.innerHTML = ourSrc
         (index > 1 ? index = 0 : index++)
     }, 3000)
 }
