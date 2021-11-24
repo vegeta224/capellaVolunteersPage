@@ -7,7 +7,6 @@ function submitForm(event) {
     const phoneRegex = /^\([0-9]{3}\) [0-9]{3}\-[0-9]{4}/;
     const arr = [];
 
-
     if (document.getElementById('userName').value == "") {
         document.getElementById('userNameError').innerHTML = "Username is required."
         document.getElementById('userNameError').style["display"] = "initial";
@@ -63,8 +62,6 @@ function submitForm(event) {
         document.getElementById('lastNameError').style["display"] = "none";
     }
 
-
-    // if (document.getElementById('email').value == "")
     if (emailRegex.test(document.getElementById('email').value) == false && document.getElementById('email').value !== "") {
         document.getElementById('emailError').style["display"] = "initial";
         arr.push('email')
@@ -79,8 +76,6 @@ function submitForm(event) {
         document.getElementById('phoneNumberError').style["display"] = "none";
     }
 
-   
-    console.log(arr)
     if (arr.length >= 1) {
         document.getElementById(arr[0]).focus();
     } else {
