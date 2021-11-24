@@ -26,41 +26,62 @@
         </nav>
     </header>
     <section id="pageForm">
-        <form action="#">
+        <form action="#" onSubmit="submitForm(event)">
             <label for="userName">Username:</label>
-            <input type="text" name="userName" placeholder="Enter your Username" />
-
+            <input type="text" name="userName" id="userName" placeholder="Enter your Username" />
+            <div id='userNameError'>
+                Username should only contain letters and numbers.
+            </div><br><br>
             <label for="Password">Password:
             </label>
-            <input type="password" name="password" placeholder="Enter your Password" />
-
+            <input type="password" name="password" id="firstPassword" placeholder="Enter your Password" />
+            <div id='firstPasswordError'>
+                Password should be at least 8 characters long.
+            </div><br><br>
             <label for="passwordVerify">Verify your Password:
             </label>
-            <input type="password" name="passwordVerify" placeholder="Enter in your Password again" />
-
+            <input type="password" name="passwordVerify" id="secondPassword" placeholder="Enter in your Password again" />
+            <div id='secondPasswordError'>
+                Passwords do not match.
+            </div><br><br>
             <label for="firstName">First Name:
             </label>
-            <input type="text" name="firstName" placeholder="Enter your First Name" />
-
+            <input type="text" name="firstName" id="firstName" placeholder="Enter your First Name" />
+            <div id='firstNameError'>
+                First name should only contain letters.
+            </div><br><br>
             <label for="hostName">Last Name:
             </label>
-            <input type="text" name="lastName" placeholder="Enter your Last Name" />
+            <input type="text" name="lastName" id="lastName" placeholder="Enter your Last Name" />
+            <div id='lastNameError'>
+                Last name should only contain letters.
+            </div><br><br>
             <label for="email">Email:
             </label>
-            <input type="text" name="email" placeholder="Enter your Email Address" />
-			<label for="phoneNumber">Phone Number
+            <input type="text" name="email" id="email" placeholder="Enter your Email Address" />
+            <div id='emailError'>
+                Email must be in xxx@xxx.xxx format.
+            </div><br><br>
+            <label for="phoneNumber">Phone Number
             </label>
-            <input type="text" name="lastName" placeholder="Enter your Phone Number" />
-			<label for="signUpNewsletter">Sign up for newsletter:
+            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Enter your Phone Number" />
+            <div id='phoneNumberError'>
+                Phone number must be in (xxx) xxx-xxx format.
+            </div><br><br>
+            <label for="signUpNewsletter" id="signUpNewsletter">Sign up for newsletter:
             </label>
-			  <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes 
-				<input type="radio" name="signUpNewsletter" value="No"> No
+			  <input type="radio" name="signUpNewsletter"  value="Yes"> Yes 
+			  <input type="radio" name="signUpNewsletter" value="No"> No
+              <div id='newsletterError'>
+                  Newsletter indication must be made.
+              </div>
             <input type="submit" value="Next step">
         </form>
     </section>
 
     <footer>This events site is for IT-FP3215 tasks.
     </footer>
+    <script src='./js/registration.js'></script>
 </body>
 
 </html>
