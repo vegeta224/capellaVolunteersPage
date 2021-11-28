@@ -2,7 +2,7 @@ body {
     font: 15px arial, sans-serif;
     color: #808080;
 }
-input[type=text],
+input[type=text], textarea,
 select ,input[type=password],radio{
     width: 100%;
     padding: 12px 20px;
@@ -11,6 +11,7 @@ select ,input[type=password],radio{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-family: arial;
 }
 input[type=submit] {
     width: 100%;
@@ -145,4 +146,16 @@ div.desc {
 #userNameError, #firstPasswordError, #secondPasswordError, #firstNameError, #lastNameError, #emailError, #phoneNumberError, #newsletterError {
     display: none;
     color: red;
+}
+
+#keyvalue {
+    display: flex;
+    flex-direction: row;
+    margin: 8px 0 0 15px;
+}
+
+#values, #keys {
+    font-style: bold;
+    margin-left: 4px;
+    color: black;
 }

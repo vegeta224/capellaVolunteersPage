@@ -27,26 +27,36 @@
     </header>
     <section id="pageForm">
         <form action="#">
+            <label for="interests" id="interests">Interests:</label>
+            <input type="checkbox" name="interests" value="Cats">Cats</input>
+            <input type="checkbox" name="interests" value="Dogs">Dogs</input>
+            <input type="checkbox" name="interests" value="Neither">Neither</input>
+            <br><br><br>
+            <label for="newsletter" id="newsLetter">Sign up for newsletter:</label>
+            <input type="radio" name="newsLetter" value="Yes">Yes</input>
+            <input type="radio" name="newsLetter" value="No">No</input>
+            <br><br><br>
+            <label for="comments">Comments:</label><br>
+            <textarea id="comments" placeholder="Leave any comments here"></textarea>
+            <label for="referral">Referred By:</label>
+            <br>
+            <input type="text" id="referral" placeholder="Name of person who referred you" />
+            <input type="hidden" name="userName" id="userName" />
+            <input type="hidden" name="password" id="password" />
+            <input type="hidden" name="passwordVerify" id="passwordVerify" />
+            <input type="hidden" name="firstName" id="firstName" />
+            <input type="hidden" name="lastName" id="lastName" />
+            <input type="hidden" name="email" id="email" />
+            <input type="hidden" name="phoneNumber" id="phoneNumber" />
+			<input type="hidden" name="signUpNewsletter" id="newsLetter" />
 			
-            <!--
-			Include other form fields here
-			
-			-->
-            <input type="hidden" name="userName"/>
-            <input type="hidden" name="password"/>
-            <input type="hidden" name="passwordVerify" />
-            <input type="hidden" name="firstName" />
-            <input type="hidden" name="lastName" />
-            <input type="hidden" name="email"/>
-            <input type="hidden" name="lastName" />
-			<input type="hidden" name="signUpNewsletter"/ >
-			
-            <input type="submit" value="Register">
+            <input type="submit" value="Submit" onClick=setCookie(event)>
         </form>
     </section>
 
     <footer>This events site is for IT-FP3215 tasks.
     </footer>
+    <script src='./js/interests.js'></script>
 </body>
 
 </html>

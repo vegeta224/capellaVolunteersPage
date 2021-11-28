@@ -79,6 +79,14 @@ function submitForm(event) {
     if (arr.length >= 1) {
         document.getElementById(arr[0]).focus();
     } else {
-        window.open('confirm.html', '_self', false)
+        let enteredUsername = document.getElementById('userName').value
+        let enteredPassword = document.getElementById('firstPassword').value
+        let enteredFirstName = document.getElementById('firstName').value
+        let enteredLastName = document.getElementById('lastName').value
+        let enteredEmail = document.getElementById('email').value || ''
+        let enteredPhone = document.getElementById('phoneNumber').value || ''
+        let enteredNewsletter = document.querySelector('input[type="radio"]:checked') ? document.querySelector('input[type="radio"]:checked').value : '';
+        const url = './interests.html?userName=' + enteredUsername + '&password=' + enteredPassword + '&firstName=' + enteredFirstName + '&lastName=' + enteredLastName + '&email=' + enteredEmail + '&phoneNumber=' + enteredPhone + '&newsLetterSignUp=' + enteredNewsletter;
+        window.location.href = url;
     }
 }
